@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "lib/dry/interface/version"
-
 Gem::Specification.new do |spec|
   spec.name          = "dry-interface"
-  spec.version       = Dry::Interface::VERSION
+  spec.version       = "1.0.0"
   spec.authors       = ["Linus Oleander"]
   spec.email         = ["oleander@users.noreply.github.com"]
   spec.homepage      = "https://github.com/oleander/dry-interface"
