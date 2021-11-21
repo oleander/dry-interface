@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "dry-interface"
-  spec.version       = "1.0.0"
+  spec.version       = "1.0.1"
   spec.authors       = ["Linus Oleander"]
   spec.email         = ["oleander@users.noreply.github.com"]
   spec.homepage      = "https://github.com/oleander/dry-interface"
