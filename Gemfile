@@ -12,8 +12,8 @@ group :development do
 end
 
 group :test do
-  gem 'rspec-github', require: false
   gem "rspec", "~> 3.0"
+  gem "rspec-github", require: false
 end
 
 gem "rake", "~> 13.0"
