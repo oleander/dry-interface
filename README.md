@@ -1,4 +1,4 @@
-# Dry::Interface
+# Dry::Interface [![Main](https://github.com/oleander/dry-interface/actions/workflows/main.yml/badge.svg)](https://github.com/oleander/dry-interface/actions/workflows/main.yml)
 
 ``` ruby
 require "dry/interface"
