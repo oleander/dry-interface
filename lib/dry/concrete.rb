@@ -74,7 +74,7 @@ module Dry
     # @return [void]
     def self.attribute(field, *constrains, **options, &block)
       alias_fields(field, **options) do |inner_options|
-        super(field, build_type_from(*constrains, **inner_options), &block)
+        super(field, *build_type_from(*constrains, **inner_options, &block))
       end
     end
 
@@ -83,7 +83,7 @@ module Dry
     # @see #attribute
     def self.attribute?(field, *constrains, **options, &block)
       alias_fields(field, **options) do |inner_options|
-        super(field, build_type_from(*constrains, **inner_options), &block)
+        super(field, *build_type_from(*constrains, **inner_options, &block))
       end
     end
 
@@ -100,9 +100,13 @@ module Dry
     end
 
     # @api private
-    def self.build_type_from(*constrains, **options)
+    def self.build_type_from(*constrains, **options, &block)
+      if block_given?
+        return [Class.new(Concrete, &block)]
+      end
+
       unless (type = constrains.map(&:to_type).reduce(:|))
-        return build_type_from(Dry::Types["any"], **options)
+        return EMPTY_ARRAY
       end
 
       if options.key?(:default)
@@ -112,7 +116,7 @@ module Dry
       end
 
       if options.empty?
-        return type
+        return [type]
       end
 
       build_type_from(type.constrained(**options))
