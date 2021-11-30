@@ -12,6 +12,7 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = ">= 3.0.0"
 
   spec.files = Dir["lib/**/*.rb"]
+
   spec.add_dependency "activesupport"
   spec.add_dependency "dry-struct"
   spec.add_dependency "dry-types"

@@ -7,6 +7,7 @@ require "active_support/configurable"
 require "active_support/inflector"
 require "active_support/concern"
 require "dry/types"
+require "dry"
 
 module Dry
   autoload :Concrete, "dry/concrete"
