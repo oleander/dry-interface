@@ -1,0 +1,6 @@
+nextify: |
+  --transpile-mode=rewrite
+  --edge
+  --min-version=2.6.6
+  --proposed
+  -V

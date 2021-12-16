@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "dry/interface"
+require "dry-interface"
 require_relative "examples"
 require "pry"
 require_relative "support"

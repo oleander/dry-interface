@@ -17,3 +17,4 @@ group :test do
 end
 
 gem "rake", "~> 13.0"
+gem "ruby-next"

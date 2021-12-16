@@ -9,13 +9,14 @@ Gem::Specification.new do |spec|
   spec.summary       = "Dry::Interface"
   spec.license       = "MIT"
 
-  spec.required_ruby_version = ">= 3.0.0"
+  spec.required_ruby_version = ">= 2.6.6"
 
-  spec.files = Dir["lib/**/*.rb"]
+  spec.files = Dir["lib/.rbnext/**/*.rb", "lib/**/*.rb"]
 
   spec.add_dependency "activesupport"
   spec.add_dependency "dry-struct"
   spec.add_dependency "dry-types"
+  spec.add_dependency "ruby-next"
 
   spec.metadata = { "rubygems_mfa_required" => "true" }
 end

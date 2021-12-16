@@ -5,7 +5,9 @@ describe Dry::Interface::Abstract do
     subject(:person) do
       Class.new(described_class) do
         attribute :name, String
-        def self.name() = "Person"
+        def self.name
+          "Person"
+        end
       end
     end
 
@@ -16,7 +18,9 @@ describe Dry::Interface::Abstract do
     context "when a unit type inherits" do
       let!(:developer) do
         Class.new(person::Unit) do
-          def self.name() = "Developer"
+          def self.name
+            "Developer"
+          end
         end
       end
 
@@ -29,7 +33,9 @@ describe Dry::Interface::Abstract do
     context "when a concrete type inherits" do
       let!(:driver) do
         Class.new(person::Concrete) do
-          def self.name() = "Driver"
+          def self.name
+            "Driver"
+          end
         end
       end
 
@@ -42,7 +48,9 @@ describe Dry::Interface::Abstract do
     context "when an abstract type inherits" do
       let!(:runner) do
         Class.new(person::Abstract) do
-          def self.name() = "Runner"
+          def self.name
+            "Runner"
+          end
         end
       end
 
@@ -54,7 +62,9 @@ describe Dry::Interface::Abstract do
       context "when abstract class gets inherited" do
         let!(:slow) do
           Class.new(runner::Unit) do
-            def self.name() = "Slow"
+            def self.name
+              "Slow"
+            end
           end
         end
 
@@ -84,7 +94,9 @@ describe Dry::Interface::Abstract do
     context "when a concrete type inherits" do
       let!(:developer) do
         Class.new(person::Concrete) do
-          def self.name() = "Developer"
+          def self.name
+            "Developer"
+          end
         end
       end
 
@@ -100,7 +112,9 @@ describe Dry::Interface::Abstract do
     let(:person) do
       Class.new(described_class) do
         attribute :name, String
-        def self.name() = "Person"
+        def self.name
+          "Person"
+        end
       end
     end
 
@@ -146,7 +160,9 @@ describe Dry::Interface::Abstract do
       let(:person) do
         Class.new(described_class::Unit) do
           attribute :name, String
-          def self.name() = "Person"
+          def self.name
+            "Person"
+          end
         end
       end
 
@@ -179,7 +195,9 @@ describe Dry::Interface::Abstract do
       let!(:developer) do
         Class.new(person::Abstract) do
           attribute :language, String
-          def self.name() = "Developer"
+          def self.name
+            "Developer"
+          end
         end
       end
 
@@ -195,7 +213,9 @@ describe Dry::Interface::Abstract do
         let!(:ruby_developer) do
           Class.new(developer::Unit) do
             attribute :language, Types.Value("ruby")
-            def self.name() = "RubyDeveloper"
+            def self.name
+              "RubyDeveloper"
+            end
           end
         end
 
