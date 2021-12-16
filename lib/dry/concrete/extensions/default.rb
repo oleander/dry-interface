@@ -10,7 +10,7 @@ module Dry
           #
           # @return [#call(Dry::Types::Type)]
           def to_default
-            ->(type) { type[call] }.freeze
+            -> type { type[call] }.freeze
           end
         end
 
@@ -20,7 +20,7 @@ module Dry
           #
           # @return [#call(Dry::Types::Type)]
           def to_default
-            ->(type = Dry::Types["any"]) { type[self] }.to_default
+            -> type = Dry::Types["any"] { type[self] }.to_default
           end
         end
       end

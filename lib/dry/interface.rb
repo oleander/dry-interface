@@ -43,7 +43,7 @@ module Dry
 
     # @return [String]
     def self.to_s
-      format("%<name>s<[%<types>s]>", name: name, types: subtypes.map(&:to_s).join(" | "))
+      "%s<[%s]>" % [name, subtypes.map(&:to_s).join(" | ")]
     end
 
     def self.reduce(input, subtype)
@@ -65,7 +65,7 @@ module Dry
     # @return [Dry::Struct::Sum, Dry::Struct::Class]
     def self.subtype
       Constructor(self) do |value, _type, &error|
-        error ||= lambda do |error|
+        error ||= -> error do
           raise error
         end
 

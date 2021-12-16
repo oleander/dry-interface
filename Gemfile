@@ -7,6 +7,8 @@ gemspec
 group :development do
   gem "pry"
   gem "rubocop", "~> 1.7"
+  gem "rubocop-md"
+  gem "rubocop-performance"
   gem "rubocop-rake"
   gem "rubocop-rspec"
 end

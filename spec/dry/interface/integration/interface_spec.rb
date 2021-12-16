@@ -215,7 +215,7 @@ describe Dry::Interface do
       end
 
       context "without key" do
-        let(:valid) { { field: %w[value1 value2] } }
+        let(:valid) { { field: ["value1", "value2"] } }
 
         it_behaves_like "a struct" do
           let(:invalid) { { field: [] } }

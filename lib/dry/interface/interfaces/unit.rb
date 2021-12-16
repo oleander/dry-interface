@@ -38,7 +38,8 @@ module Dry
               in [] then raise ArgumentError, "[#{self}] has no attributes, one is required"
               in [key] then _new({ key => value }, *other, &block)
               else
-                raise ArgumentError, "[#{self}] has more than one attribute: #{attribute_names.join(', ')}"
+                raise ArgumentError,
+                      "[#{self}] has more than one attribute: #{attribute_names.join(', ')}"
               end
             end
           end

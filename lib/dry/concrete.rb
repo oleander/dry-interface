@@ -30,17 +30,10 @@ module Dry
 
     config.order = Hash.new(-1)
 
-    delegate(*%i[
-               Constructor
-               Interface
-               Instance
-               Constant
-               Nominal
-               Value
-               Array
-               Hash
-               Any
-             ], to: :Types)
+    delegate(
+      :Constructor, :Interface, :Instance, :Constant,
+      :Nominal, :Value, :Array, :Hash, :Any, to: :Types
+    )
 
     def self.initializer(owner, &block)
       owner.schema owner.schema.constructor(&block)
