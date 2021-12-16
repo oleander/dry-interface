@@ -13,7 +13,7 @@ module Support
     Class.new(described_class::Concrete, &block)
   end
 
-  def attribute(*args, &block)
-    define_struct { attribute(*args, &block) }
+  def attribute(...)
+    define_struct { attribute(...) }
   end
 end
