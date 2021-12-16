@@ -5,7 +5,9 @@ describe Dry::Interface::Unit do
     let(:person) do
       Class.new(described_class) do
         attribute :name, String
-        def self.name() = "Person"
+        def self.name
+          "Person"
+        end
       end
     end
 
